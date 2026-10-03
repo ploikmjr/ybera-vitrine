@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aline Faria | Consultoria Ybera Paris</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-main: #0c0c0e;
+      --bg-surface: #141418;
+      --bg-card: #1c1c22;
+      --accent-gold: #e5b95f;
+      --accent-gold-gradient: linear-gradient(135deg, #f2d07e 0%, #c49438 100%);
+      --text-primary: #ffffff;
+      --text-secondary: #b3b3b8;
+      --text-muted: #73737a;
+      --border-gold: rgba(229, 185, 95, 0.2);
+      --badge-discount: #e63946;
+      --instagram: #e1306c;
+      --whatsapp: #25d366;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.5;
+      padding-bottom: 90px;
+    }
+
+    .top-bar {
+      background: var(--accent-gold-gradient);
+      color: #000;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .container { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+    .hero { text-align: center; padding: 44px 0 28px; }
+
+    .profile-avatar-wrap {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      padding: 3px;
+      background: var(--accent-gold-gradient);
+      box-shadow: 0 0 25px rgba(229, 185, 95, 0.25);
+    }
+
+    .profile-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: #222;
+      display: block;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--border-gold);
+      background: rgba(229, 185, 95, 0.08);
+      color: var(--accent-gold);
+      padding: 5px 14px;
+      border-radius: 99px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      background: linear-gradient(180deg, #fff 10%, #d8d8d8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-title span {
+      font-style: italic;
+      background: var(--accent-gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      max-width: 520px;
+      margin: 0 auto 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-gold {
+      background: var(--accent-gold-gradient);
+      color: #000;
+      box-shadow: 0 4px 18px rgba(229, 185, 95, 0.25);
+    }
+
+    .btn-gold:hover {
+      box-shadow: 0 6px 26px rgba(229, 185, 95, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .btn-instagram {
+      border: 1px solid rgba(225, 48, 108, 0.4);
+      background: rgba(225, 48, 108, 0.08);
+      color: #fff;
+    }
+
+    .btn-instagram:hover {
+      background: var(--instagram);
+      border-color: var(--instagram);
+    }
+
+    .trust-badges {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin: 32px 0 44px;
+      padding: 18px;
+      background: var(--bg-surface);
+      border-radius: 12px;
+      border: 1px solid var(--border-gold);
+    }
+
+    .trust-item { display: flex; align-items: center; gap: 12px; }
+    .trust-icon {
+      font-size: 1.3rem;
+      color: var(--accent-gold);
+      background: rgba(229, 185, 95, 0.1);
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .trust-text h4 { font-size: 0.85rem; font-weight: 600; }
+    .trust-text p { font-size: 0.75rem; color: var(--text-muted); }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 22px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .section-tag {
+      color: var(--accent-gold);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .grid-products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-gold);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: var(--badge-discount);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .card-image-wrap { width: 100%; height: 230px; overflow: hidden; background: #111; }
+    .card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .card:hover .card-img { transform: scale(1.04); }
+
+    .card-body { padding: 16px; display: flex; flex-direction: column; flex-grow: 1; }
+    .card-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; line-height: 1.3; }
+    .card-pricing { margin-bottom: 12px; }
+    .price-old { font-size: 0.78rem; color: var(--text-muted); text-decoration: line-through; margin-right: 6px; }
+    .price-current { font-size: 1.1rem; font-weight: 700; color: #fff; }
+
+    .btn-buy {
+      width: 100%;
+      background: transparent;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      padding: 9px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      margin-top: auto;
+    }
+
+    .btn-buy:hover {
+      background: var(--accent-gold-gradient);
+      color: #000;
+      border-color: transparent;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background: var(--whatsapp);
+      color: white;
+      padding: 13px 20px;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
+      z-index: 1000;
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp-float:hover { transform: scale(1.05); }
+
+    footer {
+      text-align: center;
+      padding: 36px 20px 20px;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    💎 Loja Oficial Ybera Paris • Desconto de Consultora Aplicado
+  </div>
+
+  <div class="container">
+    <header class="hero">
+      <div class="profile-avatar-wrap">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" alt="Aline Faria" class="profile-avatar">
+      </div>
+      
+      <div class="hero-badge">Aline Faria • Consultora Ybera</div>
+      <h1 class="hero-title">Cabelos de Salão <span>em Casa</span></h1>
+      <p class="hero-subtitle">
+        Tratamentos profissionais com garantia de fábrica. Compre diretamente pela loja oficial com meu link de parceira.
+      </p>
+
+      <div class="hero-actions">
+        <a href="http://www.ybera.com/?parceiro=33337" target="_blank" class="btn btn-gold">
+          Acessar Loja Ybera Oficial
+        </a>
+        <a href="https://www.instagram.com/alinefaria09/" target="_blank" class="btn btn-instagram">
+          Instagram @alinefaria09
+        </a>
+      </div>
+    </header>
+
+    <div class="trust-badges">
+      <div class="trust-item">
+        <div class="trust-icon">✨</div>
+        <div class="trust-text">
+          <h4>100% Original</h4>
+          <p>Diretamente da fábrica Ybera</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📦</div>
+        <div class="trust-text">
+          <h4>Envio Oficial</h4>
+          <p>Entrega rastreada para todo o Brasil</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">💬</div>
+        <div class="trust-text">
+          <h4>Tire Dúvidas</h4>
+          <p>Atendimento exclusivo</p>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="section-header">
+        <h2>Ofertas & Destaques</h2>
+        <span class="section-tag">Atualizado Automaticamente</span>
+      </div>
+
+      <div class="grid-products" id="productGrid">
+        <p style="color: #888; grid-column: 1/-1; text-align: center;">Carregando produtos...</p>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 Aline Faria - Consultora Independente Ybera Paris.</p>
+    </footer>
+  </div>
+
+  <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Aline!%20Vi%20seus%20produtos%20da%20Ybera%20e%20queria%20tirar%20uma%20d%C3%BAvida." target="_blank" class="whatsapp-float">
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    Falar no WhatsApp
+  </a>
+
+  <script>
+    fetch('produtos.json')
+      .then(res => res.json())
+      .then(produtos => {
+        const grid = document.getElementById('productGrid');
+        if (!produtos || produtos.length === 0) {
+          grid.innerHTML = '<p style="color:#aaa;">Nenhuma promoção encontrada no momento.</p>';
+          return;
+        }
+        grid.innerHTML = produtos.map(prod => `
+          <article class="card">
+            ${prod.tag ? `<div class="card-badge">${prod.tag}</div>` : ''}
+            <div class="card-image-wrap">
+              <img src="${prod.imagem}" alt="${prod.nome}" class="card-img" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">${prod.nome}</h3>
+              <div class="card-pricing">
+                ${prod.precoAntigo ? `<span class="price-old">${prod.precoAntigo}</span>` : ''}
+                <span class="price-current">${prod.precoAtual}</span>
+              </div>
+              <a href="${prod.link}" target="_blank" class="btn-buy">Comprar com Desconto</a>
+            </div>
+          </article>
+        `).join('');
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
