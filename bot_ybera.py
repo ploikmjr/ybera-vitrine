@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 PARCEIRO_ID = "33337"
 URL_BASE = "https://www.ybera.com"
-URL_ALVO = "https://www.ybera.com/mais-vendidos"
+URL_MAIS_VENDIDOS = "https://www.ybera.com/mais-vendidos"
 
 HEADERS = {
     "User-Agent": (
@@ -17,17 +17,17 @@ HEADERS = {
     "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
 }
 
-# Termos que devem ser ignorados para não pegar botões de menu
 PALAVRAS_IGNORADAS = [
     "todos os produtos",
     "produtos",
-    "shampoo",
-    "condicionador",
-    "máscara",
     "menu",
     "carrinho",
     "minha conta",
     "voltar",
+    "mostrar mais",
+    "avise-me",
+    "politica",
+    "termos",
 ]
 
 
@@ -50,9 +50,9 @@ def aplicar_link_afiliado(url_produto, id_afiliado):
     )
 
 
-def extrair_produtos():
-    print(f"[*] Acessando {URL_ALVO}...")
-    resp = requests.get(URL_ALVO, headers=HEADERS, timeout=20)
+def extrair_mais_vendidos():
+    print(f"[*] Buscando os mais vendidos em: {URL_MAIS_VENDIDOS}")
+    resp = requests.get(URL_MAIS_VENDIDOS, headers=HEADERS, timeout=20)
     if resp.status_code != 200:
         print(f"[!] Erro ao acessar: Status {resp.status_code}")
         return []
@@ -64,13 +64,15 @@ def extrair_produtos():
     for item in soup.find_all("a", href=True):
         href = item["href"]
 
-        # Critério rigoroso: ignora links de menu e exige que o link aponte para um produto real
+        # Filtra apenas links para produtos reais
         if not (
             "/p/" in href
             or "/produto/" in href
             or "/kit-" in href
             or "-ybera" in href
             or "fashion-gold" in href
+            or "terra-coco" in href
+            or "oleo-de-mirra" in href
         ):
             continue
 
@@ -80,23 +82,27 @@ def extrair_produtos():
         if not container:
             container = item
 
-        # Busca pelo elemento de imagem
+        # Imagem
         img_elem = container.find("img") or item.find("img")
         if not img_elem:
             continue
 
-        # Captura a URL real da imagem
         imagem = (
             img_elem.get("data-src")
             or img_elem.get("src")
             or img_elem.get("srcset", "").split()[0]
         )
-        if not imagem or "logo" in imagem.lower() or "icon" in imagem.lower():
+        if (
+            not imagem
+            or "logo" in imagem.lower()
+            or "icon" in imagem.lower()
+            or "banner" in imagem.lower()
+        ):
             continue
         if imagem.startswith("//"):
             imagem = "https:" + imagem
 
-        # Busca pelo nome do produto
+        # Título
         nome_elem = (
             container.select_one(
                 "h1, h2, h3, h4, .product-title, .title, [class*='name']"
@@ -110,11 +116,10 @@ def extrair_produtos():
             else str(nome_elem)
         )
 
-        # Filtra títulos falsos ou menus genéricos
         nome_limpo = nome.strip().lower()
         if (
             len(nome_limpo) < 8
-            or nome_limpo in PALAVRAS_IGNORADAS
+            or any(palavra in nome_limpo for palavra in PALAVRAS_IGNORADAS)
             or "adicionar" in nome_limpo
         ):
             continue
@@ -124,7 +129,7 @@ def extrair_produtos():
             continue
         links_vistos.add(url_final)
 
-        # Captura os preços
+        # Captura de preços
         texto_todo = container.get_text(separator=" ")
         precos = re.findall(r"R\$\s*[\d\.,]+", texto_todo)
 
@@ -136,6 +141,17 @@ def extrair_produtos():
         elif len(precos) == 1:
             preco_atual = precos[0]
 
+        # Selos de destaque dinâmicos
+        posicao = len(produtos) + 1
+        if posicao == 1:
+            tag = "⭐ Mais Vendido"
+        elif posicao == 2:
+            tag = "🔥 Top Procurado"
+        elif preco_antigo:
+            tag = "💥 Em Promoção"
+        else:
+            tag = "✨ Destaque"
+
         produtos.append(
             {
                 "nome": nome[:80],
@@ -143,18 +159,18 @@ def extrair_produtos():
                 "precoAtual": preco_atual,
                 "imagem": imagem,
                 "link": url_final,
-                "tag": "Mais Vendido" if len(produtos) == 0 else "Destaque",
+                "tag": tag,
             }
         )
 
         if len(produtos) >= 12:
             break
 
-    print(f"[✓] {len(produtos)} produtos válidos encontrados!")
+    print(f"[✓] {len(produtos)} produtos mais vendidos processados!")
     return produtos
 
 
 if __name__ == "__main__":
-    lista = extrair_produtos()
+    lista = extrair_mais_vendidos()
     with open("produtos.json", "w", encoding="utf-8") as f:
         json.dump(lista, f, ensure_ascii=False, indent=2)
