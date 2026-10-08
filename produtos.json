@@ -16,11 +16,27 @@
     "tag": "🔥 Top Procurado"
   },
   {
-    "nome": "Óleo de Mirra Reparador 15ml - Ybera",
+    "nome": "Óleo de Mirra Reparador 15ml | Ybera",
     "precoAntigo": "R$ 75,91",
     "precoAtual": "R$ 79,90",
-    "imagem": "https://lojaybera.fbitsstatic.net/img/p/oleo-de-mirra-reparador-15ml-ybera-151265/337841-1.jpg?w=420&h=420&v=202609100831?w=300&h=300",
+    "imagem": "https://lojaybera.fbitsstatic.net/img/p/oleo-de-mirra-reparador-15ml-ybera-151265/337841-1.jpg?w=420&h=420&v=202610071319?w=300&h=300",
     "link": "https://www.ybera.com/oleo-de-mirra-reparador-15ml-ybera-151265?parceiro=33337",
+    "tag": "💥 Em Promoção"
+  },
+  {
+    "nome": "Soro Vello Alfa-Lactobaby | Ybera",
+    "precoAntigo": "R$ 237,41",
+    "precoAtual": "R$ 249,90",
+    "imagem": "https://lojaybera.fbitsstatic.net/img/p/soro-vello-alfa-lactobaby-ybera-150907/337468-17.jpg?w=420&h=420&v=202609141109?w=300&h=300",
+    "link": "https://www.ybera.com/soro-vello-alfa-lactobaby-ybera-150907?parceiro=33337",
+    "tag": "💥 Em Promoção"
+  },
+  {
+    "nome": "Shampoo Multifunção Cuidados Profundos 500ml | Ybera Fashion Gold",
+    "precoAntigo": "R$ 102,51",
+    "precoAtual": "R$ 107,90",
+    "imagem": "https://lojaybera.fbitsstatic.net/img/p/shampoo-multifuncao-cuidados-profundos-500ml-ybera-fashion-gold-151335/337922-1.jpg?w=420&h=420&v=202609141146?w=300&h=300",
+    "link": "https://www.ybera.com/shampoo-multifuncao-cuidados-profundos-500ml-ybera-fashion-gold-151335?parceiro=33337",
     "tag": "💥 Em Promoção"
   },
   {
@@ -29,6 +45,14 @@
     "precoAtual": "R$ 242,16",
     "imagem": "https://lojaybera.fbitsstatic.net/img/p/kit-manutencao-pos-progressiva-shampoo-500ml-mascara-2-em-1-500g-ybera-fashion-gold-150294/336804-1.jpg?w=420&h=420&v=202609100932?w=300&h=300",
     "link": "https://www.ybera.com/kit-manutencao-pos-progressiva-shampoo-500ml-mascara-2-em-1-500g-ybera-fashion-gold-150294?parceiro=33337",
+    "tag": "💥 Em Promoção"
+  },
+  {
+    "nome": "Leave-in Universal 250g | Ybera",
+    "precoAntigo": "R$ 123,41",
+    "precoAtual": "R$ 129,90",
+    "imagem": "https://lojaybera.fbitsstatic.net/img/p/leave-in-universal-250g-ybera-150953/337514-1.jpg?w=420&h=420&v=202609141119?w=300&h=300",
+    "link": "https://www.ybera.com/leave-in-universal-250g-ybera-150953?parceiro=33337",
     "tag": "💥 Em Promoção"
   },
   {
@@ -70,29 +94,5 @@
     "imagem": "https://lojaybera.fbitsstatic.net/img/p/kit-mascaras-cuidados-profundos-shampoo-500ml-cuidados-profundos-ybera-fashion-gold-151600/338243-1.jpg?w=420&h=420&v=202608201724?w=300&h=300",
     "link": "https://www.ybera.com/kit-mascaras-cuidados-profundos-shampoo-500ml-cuidados-profundos-ybera-fashion-gold-151600?parceiro=33337",
     "tag": "💥 Em Promoção"
-  },
-  {
-    "nome": "Summer Proteção Universal 250ml | Ybera",
-    "precoAntigo": "R$ 226,01",
-    "precoAtual": "R$ 237,90",
-    "imagem": "https://lojaybera.fbitsstatic.net/img/p/summer-protecao-universal-250ml-ybera-151348/337956.jpg?w=420&h=420&v=202609241105?w=300&h=300",
-    "link": "https://www.ybera.com/summer-protecao-universal-250ml-ybera-151348?parceiro=33337",
-    "tag": "💥 Em Promoção"
-  },
-  {
-    "nome": "Shampoo Essência Brasileira Elixir da Floresta 250ml | Ybera",
-    "precoAntigo": "R$ 102,51",
-    "precoAtual": "R$ 107,90",
-    "imagem": "https://lojaybera.fbitsstatic.net/img/p/shampoo-essencia-brasileira-elixir-da-floresta-250ml-ybera-150928/337489.jpg?w=420&h=420&v=202609251513?w=300&h=300",
-    "link": "https://www.ybera.com/shampoo-essencia-brasileira-elixir-da-floresta-250ml-ybera-150928?parceiro=33337",
-    "tag": "💥 Em Promoção"
-  },
-  {
-    "nome": "Shampoo Elixir do Cerrado Essência Brasileira 1L - Ybera Paris",
-    "precoAntigo": "",
-    "precoAtual": "R$ 277,90",
-    "imagem": "https://lojaybera.fbitsstatic.net/img/p/shampoo-elixir-do-cerrado-essencia-brasileira-1l-ybera-paris-150918/337479-1.jpg?w=420&h=420&v=202601151037?w=300&h=300",
-    "link": "https://www.ybera.com/shampoo-elixir-do-cerrado-essencia-brasileira-1l-ybera-paris-150918?parceiro=33337",
-    "tag": "✨ Destaque"
   }
 ]
